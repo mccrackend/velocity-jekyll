@@ -21,17 +21,19 @@
     "HAPROXY_GROUP": "external",
     "HAPROXY_0_VHOST": "http://ec2-52-41-53-4.us-west-2.compute.amazonaws.com/"
   },
-  "instances": 1,
+  "instances": 3,
   "cpus": 0.1,
   "mem": 128,
   "healthChecks": [
     {
-      "protocol": "TCP",
-      "gracePeriodSeconds": 200,
-      "intervalSeconds": 30,
+      "path": "/",
+      "protocol": "HTTP",
       "portIndex": 0,
-      "timeoutSeconds": 10,
-      "maxConsecutiveFailures": 2
+      "gracePeriodSeconds": 300,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 20,
+      "maxConsecutiveFailures": 3,
+      "ignoreHttp1xx": false
     }
   ],
   "upgradeStrategy": {
