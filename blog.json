@@ -3,11 +3,11 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "mccrackend/velocity-jekyll:latest",
+      "image": "mccrackend/velocity-jekyll",
       "network": "BRIDGE",
       "portMappings": [
         {
-          "containerPort": 4000,
+          "containerPort": 4037,
           "hostPort": 0
         }
       ]
